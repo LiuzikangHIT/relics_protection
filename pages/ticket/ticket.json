@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "门票预约",
+  "usingComponents": {
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
+  }
+}

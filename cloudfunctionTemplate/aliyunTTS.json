@@ -1,0 +1,12 @@
+[
+  {
+    "name": "aliyunTTS",
+    "value": {
+      "appkey": "OTe9XEp2UNMWTOst",
+      "text": "6666666666",
+      "audioSaveFile": "narration.wav",
+      "format": "wav",
+      "sampleRateValue": 16000
+    }
+  }
+]

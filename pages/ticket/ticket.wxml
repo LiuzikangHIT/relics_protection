@@ -1,0 +1,92 @@
+<!--pages/ticket.wxml-->
+<view class="container">
+  <!-- 参观须知 -->
+  <view class="page-header">
+    <swiper	indicator-dots="true" autoplay="true" interval="3000">
+      <block wx:for="{{swiperList}}" wx:key="*this">
+        <swiper-item>
+          <image class="swiper-image" src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="page-body">    
+    <view class="section-title">藏韵数博</view>
+    <view class="open-info" style="color: grey;">开放入馆时间08:00 | 停止入馆时间16:00 | 闭馆时间17:00</view>
+    <!-- 功能选项 -->
+    <view class="function-btns">
+      <button class="function-btn {{selected === 'form' ? 'active' : ''}}" bind:tap="changeBtn" data-func="form">预约入馆</button>
+      <button class="function-btn {{selected === 'ticket' ? 'active' : ''}}" bind:tap="changeBtn" data-func="ticket">查看门票</button>
+      <button class="function-btn {{selected === 'record' ? 'active' : ''}}" bind:tap="changeBtn" data-func="record">我的预约</button>
+    </view>
+    <!-- 预约表单区域 -->
+    <view class="reserve-form" wx:if="{{selected === 'form'}}">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="page-section">
+          <view class="weui-cells__title">参观人姓名</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" name="name" placeholder="请输入"/>
+            </view>
+          </view>
+        </view>
+        <view class="page-section">
+          <view class="weui-cells__title">参观人手机号</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" name="phone" placeholder="请输入"/>
+            </view>
+          </view>
+        </view>
+        <view class="page-section">
+          <view class="weui-cells__title">参观日期</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <picker name="date" mode="date" value="{{dateRange.selectedDate}}" start="{{dateRange.startDate}}" end="{{dateRange.endDate}}" bindchange="bindDateChange">
+                <view class="picker" style="color: grey;">
+                  当前选择: {{dateRange.selectedDate}}
+                </view>
+              </picker>
+            </view>
+          </view>
+        </view>
+        <view class="btn-area">
+          <button formType="reset">重置</button>
+          <button formType="submit" style="background-color: #A9A9A9;">提交</button>
+        </view>
+      </form>
+    </view>
+    <!-- 门票下发区域 -->
+    <view class="ticket-card" wx:if="{{selected === 'ticket'}}">
+      <button class="ticket-btn" bindtap="showNFCDialog" style="white-space: pre-line;">NFC\n门票</button>
+      <mp-dialog title="NFC" show="{{showNFC}}" bindclose="closeDialog">
+        <view class="dialog-content">
+          <image class="nfc-img" src="cloud://relics-env-8g2qmpq8fc63082c.7265-relics-env-8g2qmpq8fc63082c-1365962227/NFC.gif"></image>
+        </view>
+      </mp-dialog>
+      <button class="ticket-btn" bindtap="showQRCodeDialog" style="white-space: pre-line;">二维码\n门票</button>
+      <mp-dialog title="二维码" show="{{showQRCode}}" bindclose="closeDialog">
+        <view class="dialog-content">
+          <canvas canvas-id="qrCanvas" style="width: 200px; height: 200px"></canvas>
+        </view>
+      </mp-dialog>
+    </view>
+    <!-- 预约记录区域 -->
+    <view class="reserve-record" wx:if="{{selected === 'record'}}">
+      <view class="line"></view>
+      <view wx:if="{{!reservation.length}}" style="color: grey;">暂无预约信息</view>
+      <view wx:else>
+        <view class="head">
+          <text>预约参观日期</text>
+          <text>参观人姓名</text>
+          <text>参观人手机号</text>
+        </view>
+        <view class="row" wx:for="{{reservation}}" wx:key="*this">
+          <text>{{item.date}}</text>
+          <text>{{item.name}}</text>
+          <text>{{item.phone}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

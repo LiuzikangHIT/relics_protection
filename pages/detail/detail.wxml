@@ -1,0 +1,28 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <view class="page-header">
+    <image class="exhibit-image" src="{{exhibit.image}}" mode="aspectFit" />
+    <view class="back-icon" style="top:{{menuTop}}px">
+      <mp-icon icon="back" color="white" size="{{12}}" bind:tap="backToLastPage"></mp-icon>
+    </view>
+  </view>
+  <view class="page-body">
+    <view class="exhibit-info">
+      <view class="exhibit-name">{{exhibit.name}}</view>
+      <view class="exhibit-dynasty">所处时代：{{exhibit.dynasty}}</view>
+      <view class="exhibit-unearthedTime">出土时间：{{exhibit.unearthedTime}}</view>
+      <view class="exhibit-unearthedPlace">出土地点：{{exhibit.unearthedPlace}}</view>
+      <view class="exhibit-specification">器物规格：{{exhibit.specification}}</view>
+      <view class="exhibit-description">{{exhibit.description}}</view>
+    </view>
+    <button class="audio-button" bindtap="tapPlayButton" disabled="{{forbidPlay}}">{{audioBtn}}</button>
+    <button class="tip-button" bindtap="showTip">查看小知识</button>
+    <view class="tip-modal" wx:if="{{showTip}}">
+      <view class="tip-content">
+        <view class="tip-title">小知识</view>
+        <view class="tip-text">{{exhibit.tip}}</view>
+        <button class="close-button" bindtap="hideTip">关闭</button>
+      </view>
+    </view>
+  </view>
+</view>

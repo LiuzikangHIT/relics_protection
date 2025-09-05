@@ -1,0 +1,37 @@
+<!--pages/home.wxml-->
+<view class="container">
+  <view class="page-header">
+    <view class="bg-swiper">
+      <t-swiper t-class="swiper"
+        wx:if="{{swiperList.length > 0}}"
+        height="600rpx"
+        current="{{current}}"
+        autoplay="{{autoplay}}"
+        duration="{{duration}}"
+        interval="{{interval}}"
+        list="{{swiperList}}"
+        navigation="{{false}}"
+        image-props="{{ { mode: 'scaleToFill' } }}"
+        bind:click="navToActivityDetail"
+      />
+    </view>
+    <view class="layer"></view>
+  </view>
+
+  <view class="page-body">
+    <view class="feature-card" style="flex-direction:row;">
+      <image class="ticket" src="cloud://relics-env-8g2qmpq8fc63082c.7265-relics-env-8g2qmpq8fc63082c-1365962227/ticket.png" bindtap="navigateToTicketPage"></image>
+      <image class="map-route" src="cloud://relics-env-8g2qmpq8fc63082c.7265-relics-env-8g2qmpq8fc63082c-1365962227/map-route.png" bindtap="navigateToMapPage"></image>
+    </view>
+    <view class="activity-title">
+      <text>—— 精彩推荐 ——</text>
+    </view>
+    <view class="activity-card">
+      <block wx:for="{{activityImg}}" wx:key="*this">
+        <view class="activity-item">
+          <image class="activity-image" src="{{item}}"/>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<!--pages/map/map.wxml-->
+<view class="container">
+  <view class="entrance">
+    <button class="entrance-btn {{entrance === 'A' ? 'active' : ''}}" bind:tap="changeEntBtn" data-entrance="A">入口A</button>
+    <button class="entrance-btn {{entrance === 'B' ? 'active' : ''}}" bind:tap="changeEntBtn" data-entrance="B">入口B</button>
+  </view>
+  <view class="line"></view>
+  <view class="map">
+    <image class="map-img" src="{{mapImg}}" mode="aspectFit"></image>
+    <!-- <view class="flag" wx:for="{{label}}" wx:for-item="outerItem" wx:key="id" wx:if="{{outerItem.pos}}">
+      <view class="flag-item" wx:for="{{outerItem.pos}}" wx:for-item="innerItem" wx:key="*this">
+        <text class="iconfont {{outerItem.icon}}" style="position: absolute; left: {{innerItem[0]}}vw; top: {{innerItem[1]}}vh; font-size: 22px; z-index: 100;"></text>
+      </view>
+    </view> -->
+    <canvas class="routeCanvas" type="2d" id="routeCanvas" style="top: {{windowSize.height * 0.05}};width: {{windowSize.width}}px; height: {{windowSize.height * 0.7}}px"></canvas>
+  </view>
+  <view class="line"></view>
+  <view class="label">
+    <view class="label-item" wx:for="{{label}}" wx:key="id">
+      <text class="iconfont {{item.icon}}"></text>
+      <text class="label-content">{{item.content}}</text>
+    </view>
+  </view>
+</view>

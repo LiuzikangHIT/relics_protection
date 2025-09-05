@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "mp-dialog": "weui-miniprogram/dialog/dialog",
+    "t-icon": "tdesign-miniprogram/icon/icon"
+  }
+}

@@ -1,0 +1,41 @@
+.container {
+  padding: 20rpx;
+  background-color: #F5EDE3;
+}
+.map-button {
+  margin: 30rpx 0;
+  background-color: #722F37;
+  color: white;
+}
+.category-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30rpx;
+}
+.category-tab {
+  padding: 10rpx 50rpx;
+  border-radius: 20rpx;
+  background-color: #E3D5C6A8;
+}
+.category-tab.active {
+  background-color: #722F37;
+  color: white;
+}
+.route-list {
+  display: flex;
+  flex-direction: column;
+}
+.route-card {
+  background-color: #E3D5C6A8;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+.route-name {
+  font-weight: bold;
+}
+.route-exhibits {
+  font-size: 28rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}

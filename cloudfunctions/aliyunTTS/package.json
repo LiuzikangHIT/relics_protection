@@ -1,0 +1,15 @@
+{
+  "name": "aliyunTTS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@alicloud/pop-core": "^1.8.0",
+    "wx-server-sdk": "~3.0.1"
+  }
+}

@@ -1,0 +1,15 @@
+<view class="container">
+  <button class="map-button" bindtap="navigateToMapPage" data-category="recommend">地图总览</button>
+  <view class="category-tabs">
+    <view class="category-tab {{currentCategory === '全部' ? 'active' : ''}}" bindtap="changeCategory" data-category="全部">全部</view>
+    <view class="category-tab {{currentCategory === item ? 'active' : ''}}" wx:for="{{categories}}" wx:key="name" bindtap="changeCategory" data-category="{{item}}">
+      {{item}}
+    </view>
+  </view>
+  <view class="route-list">
+    <view class="route-card" wx:for="{{routes}}" wx:key="id" wx:if="{{currentCategory === '全部' || currentCategory === item.category}}" bindtap="navigateToMapPage" data-category="{{item.category}}">
+      <view class="route-name">{{item.name}}</view>
+      <view class="route-exhibits">涵盖{{item.exhibits}}个展厅</view>
+    </view>
+  </view>
+</view>

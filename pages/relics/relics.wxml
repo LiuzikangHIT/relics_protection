@@ -1,0 +1,34 @@
+<!--pages/relics/relics.wxml-->
+<view class="container">
+  <view class="page-header">
+    <view class="page-title" style="top:{{menuTop}}px">赏物</view>
+    <image class="bg-image" src="cloud://relics-env-8g2qmpq8fc63082c.7265-relics-env-8g2qmpq8fc63082c-1365962227/museum.png"></image>
+  </view>
+  
+  <view class="page-body">
+    <view class="relics-title">
+      <text class="iconfont icon-wenwucangpin" style="font-size: 32px;"></text>
+      <text>馆藏文物</text>
+    </view>
+    <!-- 文物展示 -->
+    <view class="relics">
+      <block wx:for="{{relicsList}}" wx:key="id">
+        <view class="relics-item">
+          <image class="relics-image" src="{{item.image}}" mode="aspectFit" bind:tap="showDialog" data-relics="{{item}}"></image>
+          <text class="relics-name">{{item.name}}</text>
+        </view>
+        <mp-dialog title="{{item.name}}" show="{{showDialog[item.id]}}" bindclose="closeDialog" data-relics="{{item}}">
+          <view class="dialog-content">
+            <image class="relics-image" src="{{item.image}}" mode="aspectFit"></image>
+            <view class="text-content">
+              <text class="relics-dynasty">所处时代：{{item.dynasty}}</text>
+              <text class="relics-unearthedTime">出土时间：{{item.unearthedTime}}</text>
+              <text class="relics-unearthedPlace">出土地点：{{item.unearthedPlace}}</text>
+            </view>
+            <button bind:tap="navigateToDetaiPage" data-relics="{{item}}">查看详情</button>
+          </view>
+        </mp-dialog>
+      </block>
+    </view>
+  </view>
+</view>

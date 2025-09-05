@@ -1,0 +1,95 @@
+/* pages/relics/relics.wxss */
+.page-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-image {
+  width: 100%;
+  position: relative;
+  z-index: -999;
+}
+
+.page-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto; /* 水平居中 */
+  width: fit-content; /* 宽度自适应内容 */
+}
+
+.page-body {
+  flex: 1;
+  background-color: #F5EDE3;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  margin-top: -100rpx;
+  padding-top: 20rpx;
+}
+
+.relics-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 30rpx 0 -30rpx 40rpx;
+}
+
+.relics-title text {
+  margin-left: 5rpx;
+  font-size: 20px;
+}
+
+.relics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+
+.relics-item {
+  width: calc(50% - 40rpx);
+  height: 380rpx;
+  margin: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* 防止溢出 */
+  background: #E3D5C6;
+  border-radius: 20rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+}
+
+.relics-image {
+  width: 80%;
+  display: block;
+}
+
+.relics-name {
+  font-size: 36rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-content button {
+  background-color: #722F37;
+  color: white;
+}
+
+.text-content {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 60rpx;
+}
+
+.text-content text {
+  display: block;
+  text-align: left;  /* 左对齐 */
+  margin-bottom: 10rpx;  /* 行间距 */
+}

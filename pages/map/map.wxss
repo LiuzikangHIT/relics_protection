@@ -1,0 +1,72 @@
+/* pages/map/map.wxss */
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.entrance {
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  margin: 40rpx 0;
+}
+
+.entrance-btn {
+  width: 50%;
+  height: 80rpx;
+  border-radius: 0;
+}
+
+.entrance-btn.active {
+  background-color: #C9C9C9;
+}
+
+.line {
+  width: 100%;
+  height: 1rpx;
+  background-color: #99999999;
+  margin: 24rpx 0;
+}
+
+.map {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -80rpx;
+  margin-bottom: -50rpx;
+}
+
+.map-img {
+  position: relative;
+  width: 120vw;
+  height: 100%;
+  z-index: -999;
+}
+
+.routeCanvas {
+  position: absolute;
+}
+
+.label {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -20rpx;
+  padding: 30rpx;
+  z-index: 1;
+}
+
+.label-item {
+  width: 50%;
+  display: flex;
+  flex-wrap: row;
+  margin: 10rpx -80rpx 10rpx 80rpx;
+}
+
+.label-item text {
+  font-size: 20px;
+}
+
+.label-content {
+  margin-left: 16rpx;
+}

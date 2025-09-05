@@ -1,0 +1,58 @@
+<!--pages/mine/index.wxml-->
+<view class="container">
+  <view class="page-header">
+    <view class="page-title" style="top:{{menuTop}}px">我的</view>
+    <image class="bg-image" src="cloud://relics-env-8g2qmpq8fc63082c.7265-relics-env-8g2qmpq8fc63082c-1365962227/mine.jpg" mode="aspectFill"></image>
+  </view>
+  <view class="page-body">
+    <view class="user-info">
+      <image class="avatar" src='{{userInfo.avatarUrl}}'></image>
+      <text class="nick-name">{{userInfo.nickName}}</text>
+    </view>
+    <view class="function-area">
+      <view class="function" bind:tap="navigateToTicketPage">
+        <text class="iconfont icon-yuyuedingdan" style="font-size: 24px;"></text>
+        <text style="margin-left: 20rpx;">我的预约</text>
+        <text class="iconfont icon-xiangyoujiantou" style="font-size: 12px; margin-left: 380rpx;"></text>
+      </view>
+      <view class="line"></view>
+      <view class="function" bind:tap="showFavoritesDialog">
+        <text class="iconfont icon-xingxing" style="font-size: 24px;"></text>
+        <text style="margin-left: 20rpx;">我的收藏</text>
+        <text class="iconfont icon-xiangyoujiantou" style="font-size: 12px; margin-left: 380rpx;"></text>
+      </view>
+      <mp-dialog title="我的收藏" show="{{showFavorites}}" bindclose="closeDialog">
+        <view class="dialog-content">您还没有收藏</view>
+      </mp-dialog>
+      <view class="line"></view>
+      <view class="function" bind:tap="showFeedbackDialog">
+        <text class="iconfont icon-yijianfankui" style="font-size: 24px;"></text>
+        <text style="margin-left: 20rpx;">意见反馈</text>
+        <text class="iconfont icon-xiangyoujiantou" style="font-size: 12px; margin-left: 380rpx;"></text>
+      </view>
+      <view class="line"></view>
+    </view>
+    <button class="login-button" wx:if="{{!hasLogin}}" bindtap="userLogin" style="width: 460rpx;">
+      <t-icon name="logo-wechat-stroke-filled" size="48rpx"/>
+      <text style="margin-left: 20rpx;">一键登录</text>
+    </button>
+  </view>
+  <mp-dialog title="意见反馈" show="{{showFeedback}}" bindclose="closeDialog">
+    <view class="dialog-content">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <!-- <view class="section-phone">
+          <view class="input-title">联系方式：</view>
+          <input name="phone" style="height: 50rpx"/>
+        </view> -->
+        <view class="section-content">
+          <!-- <view class="input-title">具体意见：</view> -->
+          <textarea name="content" maxlength="200" style="height: 200rpx;"></textarea>
+        </view>
+        <view class="btn-area">
+          <button formType="reset">重置</button>
+          <button formType="submit" style="background-color: #A9A9A9;">提交</button>
+        </view>
+      </form>
+    </view>
+  </mp-dialog>
+</view>

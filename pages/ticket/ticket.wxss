@@ -1,0 +1,112 @@
+/* pages/ticket.wxss */
+swiper {
+  width: 100%;
+  height: 360rpx;
+}
+
+.swiper-image {
+  width: 100%;
+  height: 100%;
+}
+
+.page-body {
+  margin-top: 20rpx;
+  padding: 0 40rpx;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.function-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20rpx -10rpx;
+}
+
+.function-btn {
+  height: 80rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 14px;
+  background-color: #E9E9E9;
+  border-radius: 0;
+}
+
+.function-btn.active {
+  background-color: #A9A9A9;
+}
+
+.reserve-form {
+  background-color: #E9E9E9;
+  margin: 0 -10rpx;
+  padding: 10rpx 30rpx;
+}
+
+.page-section {
+  margin-top: -20rpx;
+}
+
+.btn-area {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-area button {
+  margin: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.ticket-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx -10rpx;
+}
+
+.ticket-btn {
+  max-width: 45%;
+  aspect-ratio: 1/0.8;
+  background-color: #E9E9E9;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx;
+}
+
+.nfc-img {
+  width: 250px;
+  height: 250px;
+}
+
+.dialog-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reserve-record {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.line {
+  width: 100%;
+  height: 1rpx;
+  background-color: #99999999;
+  margin: 24rpx 0;
+}
+
+.head, .row {
+  width: 85vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10rpx 0;
+}
